@@ -1,9 +1,9 @@
-MDN CSS Note
+MDN CSS Intro Note
 
 # CSS如何工作
 
 ### CSS 实际上如何工作？
-![image](https://raw.githubusercontent.com/zhaozhouyang/markdown-photots/master/css/QQ20180122-102239%402x.png)
+![image](https://raw.githubusercontent.com/zhaozhouyang/markdown-photots/master/css/css-intro.png)
 当浏览器显示文档时，它必须将文档的内容与其样式信息结合。它分两个阶段处理文档：  
 1. 浏览器将 HTML 和 CSS 转化成 DOM （文档对象模型）。DOM在计算机内存中表示文档。它把文档内容和其样式结合在一起。
 2. 浏览器显示 DOM 的内容。
@@ -20,6 +20,7 @@ MDN CSS Note
 2. 类选择器（Class selectors）
 3. ID 选择器
 4. 通用选择器（Universal selector）
+
 ```
 * {
   padding: 5px;
@@ -31,14 +32,14 @@ MDN CSS Note
 ### 属性选择器（Attribute selectors）
 通过 属性 / 属性值 匹配一个或多个元素。
 1. 存在和值（Presence and value）属性选择器
-- [attr]：该选择器选择包含 attr 属性的所有元素，不论 attr 的值为何。
-- [attr=val]：该选择器仅选择 attr 属性被赋值为 val 的所有元素。
-- [attr~=val]：该选择器仅选择 attr 属性的值（以空格间隔出多个值）中有包含 val 值的所有元素，比如位于被空格分隔的多个类（class）中的一个类。
+ - [attr]：该选择器选择包含 attr 属性的所有元素，不论 attr 的值为何。
+ - [attr=val]：该选择器仅选择 attr 属性被赋值为 val 的所有元素。
+ - [attr~=val]：该选择器仅选择 attr 属性的值（以空格间隔出多个值）中有包含 val 值的所有元素，比如位于被空格分隔的多个类（class）中的一个类。
 2. 子串值（Substring value）属性选择器
-- [attr|=val] : 选择attr属性的值以val（包括val）或val-开头的元素（-用来处理语言编码）。
-- [attr^=val] : 选择attr属性的值以val开头（包括val）的元素。
-- [attr$=val] : 选择attr属性的值以val结尾（包括val）的元素。
-- [attr*=val] : 选择attr属性的值中包含字符串val的元素。
+ - [attr|=val] : 选择attr属性的值以val（包括val）或val-开头的元素（-用来处理语言编码）。
+ - [attr^=val] : 选择attr属性的值以val开头（包括val）的元素。
+ - [attr$=val] : 选择attr属性的值以val结尾（包括val）的元素。
+ - [attr*=val] : 选择attr属性的值中包含字符串val的元素。
 
 ### 伪类（Pseudo-classes）
 匹配处于确定状态的一个或多个元素，比如被鼠标指针悬停的元素，或当前被选中或未选中的复选框，或元素是DOM树中一父节点的第一个子节点。
@@ -150,3 +151,28 @@ li > a[href*="en-US"] > .inline-warning | 0 | 0 | 2 | 2 | 0022
 - initial ：该值将应用到选定元素的属性值设置为与浏览器默认样式表中该元素设置的值一样。如果浏览器默认样式表中没有设置值，并且该属性是自然继承的，那么该属性值就被设置为 inherit。
 - unset ：该值将属性重置为其自然值，即如果属性是自然继承的，那么它就表现得像 inherit，否则就是表现得像 initial。
 > 注意: initial 和 unset 不被IE支持。
+
+
+
+# 盒模型（The box model）
+![image](https://raw.githubusercontent.com/zhaozhouyang/markdown-photots/master/css/css-box-model.png)
+- width 和 height  
+width 和 height 设置内容框（content box）的宽度和高度。内容框是框内容显示的区域——包括框内的文本内容，以及表示嵌套子元素的其它框。
+- padding  
+padding 表示一个 CSS 框的内边距 ——这一层位于内容框的外边缘与边界的内边缘之间。该层的大小可以通过简写属性padding 一次设置所有四个边，或用 padding-top、padding-right、padding-bottom 和 padding-left 属性一次设置一个边。
+- border  
+CSS 框的边界（border）是一个分隔层，位于内边距的外边缘以及外边距的内边缘之间。边界的默认大小为0——从而让它不可见——不过我们可以设置边界的厚度、风格和颜色让它出现。 border 简写属性可以让我们一次设置所有四个边，例如  border: 1px solid black; 但这个简写可以被各种普通书写的更详细的属性所覆盖：
+border-top, border-right, border-bottom, border-left: 分别设置某一边的边界厚度／风格／颜色。
+border-width, border-style, border-color: 分别仅设置边界的厚度／风格／颜色，并应用到全部四边边界。
+你也可以单独设置某一个边的三个不同属性，如 border-top-width, border-top-style, border-top-color，等。
+- margin  
+外边距（margin）代表 CSS 框周围的外部区域，称为外边距，它在布局中推开其它 CSS 框。其表现与 padding 很相似；简写属性为 margin，单个属性分别为 margin-top、margin-right、margin-bottom 和 margin-left。
+
+## box-sizing
+在CSS中，你设置一个元素的 width 与 height 只会应用到这个元素的内容区。如果这个元素有任何的 border 或 padding ，绘制到屏幕上时的盒子宽度和高度会加上设置的边框和内边距值。这意味着当你调整一个元素的宽度和高度时需要时刻注意到这个元素的边框和内边距。当我们实现响应式布局时，这个特点尤其烦人。  
+
+box-sizing 属性可以被用来调整这些表现:  
+
+content-box  是默认值。如果你设置一个元素的宽为100px，那么这个元素的内容区会有100px宽，并且任何边框和内边距的宽度都会被增加到最后绘制出来的元素宽度中。  
+border-box 告诉浏览器去理解你设置的边框和内边距的值是包含在width内的。也就是说，如果你将一个元素的width设为100px,那么这100px会包含其它的border和padding，内容区的实际宽度会是width减去border + padding的计算值。大多数情况下这使得我们更容易的去设定一个元素的宽高。  
+一些专家甚至建议所有的Web开发者们将所有的元素的box-sizing都设为border-box。
