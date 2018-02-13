@@ -221,6 +221,7 @@ console.log(typeof obj) // object
 - toFixed(保留几位小数)
 - toExponential(科学计数法中小数的位数)
 - toPrecision(一共几位字符) // 有的会用科学计数法
+
 ### String类型
 - slice(start, end[optional]) // 支持负数
 - substring(start, end[optional]) // 负数缺省为0
