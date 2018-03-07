@@ -1,0 +1,5 @@
+[数字签名与数字证书](http://www.ruanyifeng.com/blog/2011/08/what_is_a_digital_signature.html)  
+[ssh别名登录](http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html)  
+[字符编码](http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html)  
+[Unicode与JavaScript](http://www.ruanyifeng.com/blog/2014/12/unicode.html)  
+[URL编码](http://www.ruanyifeng.com/blog/2010/02/url_encoding.html)  
