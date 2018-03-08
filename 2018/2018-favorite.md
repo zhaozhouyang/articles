@@ -3,3 +3,5 @@
 [字符编码](http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html)  
 [Unicode与JavaScript](http://www.ruanyifeng.com/blog/2014/12/unicode.html)  
 [URL编码](http://www.ruanyifeng.com/blog/2010/02/url_encoding.html)  
+[CSS Hover Effect](http://jeremycookson.com/top-10-css-hover-effects/)
+[CSS空白和换行](http://www.cnblogs.com/xiaohuochai/p/5326132.html)
